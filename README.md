@@ -46,38 +46,59 @@ curl -L "https://your-service-url.a.run.app/download?url=https://www.youtube.com
 
 ## 🚀 How to Run Locally
 
-### 1. Clone the Repository
+### ✅ Step 1: Install ffmpeg and ffprobe
 
+Make sure `ffmpeg` and `ffprobe` are installed on your system.
+
+#### On Ubuntu/Debian:
 ```bash
-git clone https://github.com/your-username/youtube-audio-api.git
-cd youtube-audio-api
+sudo apt update
+sudo apt install ffmpeg -y
 ```
 
-### 2. (Optional) Create a Virtual Environment
+#### On macOS (using Homebrew):
+```bash
+brew install ffmpeg
+```
+
+#### On Windows:
+Download from: https://ffmpeg.org/download.html  
+Add `ffmpeg/bin` to your system PATH.
+
+---
+
+### Step 2: Clone the Repository
+
+```bash
+git clone https://github.com/your-username/YouTube_Transcripter.git
+cd YouTube_Transcripter
+```
+
+### Step 3: (Optional) Create a Virtual Environment
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate    # Windows: venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+### Step 4: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the App
+### Step 5: Run the App
 
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8080
 ```
 
-### 5. Access the API Locally
+### Step 6: Access the API Locally
 
 ```bash
 curl -L "http://localhost:8080/download?url=https://www.youtube.com/watch?v=KShDB169KP4" --output audio.mp3
 ```
-
+```
 ---
 
 ## 🚀 How to Deploy on Google Cloud Run
